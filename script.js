@@ -21,7 +21,7 @@ const music = document.getElementById("bgMusic");
 // FUNCTION
 // ===============================
 
-function hideAllPages() {
+function hideAllPages(){
 
     landing.classList.add("hidden");
     giftPage.classList.add("hidden");
@@ -32,7 +32,7 @@ function hideAllPages() {
 }
 
 
-function showPage(page) {
+function showPage(page){
 
     hideAllPages();
 
@@ -43,6 +43,7 @@ function showPage(page) {
 }
 
 
+
 // ===============================
 // OPEN GIFT BUTTON
 // ===============================
@@ -51,99 +52,78 @@ openBtn.addEventListener("click", () => {
 
     showPage(giftPage);
 
-    music.play().catch(() => {
-        console.log("Music membutuhkan interaksi pengguna.");
-    });
+    music.play();
 
     fadeMusic();
 
 });
 
 
+
+
 // ===============================
 // CLICK GIFT
 // ===============================
 
-gift.addEventListener("click", () => {
+gift.addEventListener("click",()=>{
 
-    // Gift animation
-    gift.style.transform = "scale(0.9) rotate(-8deg)";
+    gift.style.transform="scale(0.9) rotate(-8deg)";
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        gift.style.transform = "scale(1.1) rotate(8deg)";
+        gift.style.transform="scale(1.1) rotate(8deg)";
 
-    }, 150);
+    },150);
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        gift.style.transform = "scale(1)";
+        gift.style.transform="scale(1)";
 
-    }, 300);
+    },300);
 
 
-    // Main confetti
     confetti({
 
-        particleCount: 180,
+        particleCount:180,
 
-        spread: 100,
+        spread:100,
 
-        origin: {
-            y: 0.6
-        }
+        origin:{y:0.6}
 
     });
 
 
-    // Extra confetti
-    setTimeout(randomConfetti, 300);
-    setTimeout(randomConfetti, 700);
-    setTimeout(randomConfetti, 1000);
-
-
-    // Move to congratulations page
-    setTimeout(() => {
+    setTimeout(()=>{
 
         showPage(congratsPage);
 
-    }, 900);
+    },900);
 
 });
 
 
+
+
 // ===============================
-// NEXT BUTTON
+// NEXT
 // ===============================
 
-nextBtn.addEventListener("click", () => {
+nextBtn.addEventListener("click",()=>{
 
     showPage(galleryPage);
 
 });
 
 
+
+
 // ===============================
-// FINISH BUTTON
+// FINISH
 // ===============================
 
-finishBtn.addEventListener("click", () => {
+finishBtn.addEventListener("click",()=>{
 
     showPage(endingPage);
-
-
-    // Final celebration
-    confetti({
-
-        particleCount: 250,
-
-        spread: 120,
-
-        origin: {
-            y: 0.7
-        }
-
-    });
 
 });
 
@@ -158,13 +138,13 @@ function fadeMusic() {
 
     let volume = 0;
 
-    const fade = setInterval(() => {
+    let fade = setInterval(() => {
 
         if (volume < 1) {
 
             volume += 0.05;
 
-            music.volume = Math.min(volume, 1);
+            music.volume = volume;
 
         } else {
 
@@ -175,6 +155,9 @@ function fadeMusic() {
     }, 150);
 
 }
+
+
+
 
 
 // =====================================
@@ -193,18 +176,16 @@ photos.forEach(photo => {
 
         popup.innerHTML = `
 
-            <div class="popup-content">
+        <div class="popup-content">
 
-                <img src="${photo.src}" alt="Memory">
+            <img src="${photo.src}">
 
-            </div>
+        </div>
 
         `;
 
         document.body.appendChild(popup);
 
-
-        // Close popup when clicked
         popup.addEventListener("click", () => {
 
             popup.remove();
@@ -216,25 +197,26 @@ photos.forEach(photo => {
 });
 
 
+
 // =====================================
 // RANDOM CONFETTI
 // =====================================
 
-function randomConfetti() {
+function randomConfetti(){
 
     confetti({
 
-        particleCount: 80,
+        particleCount:80,
 
-        spread: 80,
+        spread:80,
 
-        startVelocity: 40,
+        startVelocity:40,
 
-        origin: {
+        origin:{
 
-            x: Math.random(),
+            x:Math.random(),
 
-            y: Math.random() - 0.2
+            y:Math.random()-0.2
 
         }
 
@@ -243,44 +225,81 @@ function randomConfetti() {
 }
 
 
+
 // =====================================
-// GRADUATION CURSOR EFFECT
+// EXTRA CONFETTI
 // =====================================
 
+gift.addEventListener("click",()=>{
 
-document.addEventListener("mousemove", (e) => {
+    setTimeout(randomConfetti,300);
 
-    const sparkle = document.createElement("div");
+    setTimeout(randomConfetti,700);
 
-    sparkle.innerHTML = "✨";
+    setTimeout(randomConfetti,1000);
 
-    sparkle.className = "cursorHeart";
+});
 
-    sparkle.style.left = e.pageX + "px";
 
-    sparkle.style.top = e.pageY + "px";
+
+// =====================================
+// GRADUATION CURSOR
+// =====================================
+
+document.addEventListener("mousemove",(e)=>{
+
+    const sparkle=document.createElement("div");
+
+    sparkle.innerHTML="✨";
+
+    sparkle.className="cursorHeart";
+
+    sparkle.style.left=e.pageX+"px";
+
+    sparkle.style.top=e.pageY+"px";
 
     document.body.appendChild(sparkle);
 
-
-    setTimeout(() => {
+    setTimeout(()=>{
 
         sparkle.remove();
 
-    }, 900);
+    },900);
 
 });
+
 
 
 // =====================================
 // PAGE FADE
 // =====================================
 
-document.querySelectorAll(".page").forEach(page => {
+document.querySelectorAll(".page").forEach(page=>{
 
     page.classList.add("fadeIn");
 
 });
+
+
+
+// =====================================
+// FINISH MESSAGE
+// =====================================
+
+finishBtn.addEventListener("click",()=>{
+
+    confetti({
+
+        particleCount:250,
+
+        spread:120,
+
+        origin:{y:0.7}
+
+    });
+
+});
+
 
 
 // =====================================
