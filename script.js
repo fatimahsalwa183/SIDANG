@@ -1,3 +1,4 @@
+```javascript
 // ===============================
 // ELEMENT
 // ===============================
@@ -20,7 +21,7 @@ const music = document.getElementById("bgMusic");
 // FUNCTION
 // ===============================
 
-function hideAllPages(){
+function hideAllPages() {
 
     landing.classList.add("hidden");
     giftPage.classList.add("hidden");
@@ -31,7 +32,7 @@ function hideAllPages(){
 }
 
 
-function showPage(page){
+function showPage(page) {
 
     hideAllPages();
 
@@ -42,7 +43,6 @@ function showPage(page){
 }
 
 
-
 // ===============================
 // OPEN GIFT BUTTON
 // ===============================
@@ -51,80 +51,103 @@ openBtn.addEventListener("click", () => {
 
     showPage(giftPage);
 
-    music.play();
+    music.play().catch(() => {
+        console.log("Music membutuhkan interaksi pengguna.");
+    });
 
     fadeMusic();
 
 });
 
 
-
-
 // ===============================
 // CLICK GIFT
 // ===============================
 
-gift.addEventListener("click",()=>{
+gift.addEventListener("click", () => {
 
-    gift.style.transform="scale(0.9) rotate(-8deg)";
+    // Gift animation
+    gift.style.transform = "scale(0.9) rotate(-8deg)";
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        gift.style.transform="scale(1.1) rotate(8deg)";
+        gift.style.transform = "scale(1.1) rotate(8deg)";
 
-    },150);
+    }, 150);
 
-    setTimeout(()=>{
+    setTimeout(() => {
 
-        gift.style.transform="scale(1)";
+        gift.style.transform = "scale(1)";
 
-    },300);
+    }, 300);
 
 
+    // Main confetti
     confetti({
 
-        particleCount:180,
+        particleCount: 180,
 
-        spread:100,
+        spread: 100,
 
-        origin:{y:0.6}
+        origin: {
+            y: 0.6
+        }
 
     });
 
 
-    setTimeout(()=>{
+    // Extra confetti
+    setTimeout(randomConfetti, 300);
+    setTimeout(randomConfetti, 700);
+    setTimeout(randomConfetti, 1000);
+
+
+    // Move to congratulations page
+    setTimeout(() => {
 
         showPage(congratsPage);
 
-    },900);
+    }, 900);
 
 });
 
 
-
-
 // ===============================
-// NEXT
+// NEXT BUTTON
 // ===============================
 
-nextBtn.addEventListener("click",()=>{
+nextBtn.addEventListener("click", () => {
 
     showPage(galleryPage);
 
 });
 
 
-
-
 // ===============================
-// FINISH
+// FINISH BUTTON
 // ===============================
 
-finishBtn.addEventListener("click",()=>{
+finishBtn.addEventListener("click", () => {
 
     showPage(endingPage);
 
+
+    // Final celebration
+    confetti({
+
+        particleCount: 250,
+
+        spread: 120,
+
+        origin: {
+            y: 0.7
+        }
+
+    });
+
 });
+
+
 // =====================================
 // MUSIC FADE IN
 // =====================================
@@ -135,13 +158,13 @@ function fadeMusic() {
 
     let volume = 0;
 
-    let fade = setInterval(() => {
+    const fade = setInterval(() => {
 
         if (volume < 1) {
 
             volume += 0.05;
 
-            music.volume = volume;
+            music.volume = Math.min(volume, 1);
 
         } else {
 
@@ -152,9 +175,6 @@ function fadeMusic() {
     }, 150);
 
 }
-
-
-
 
 
 // =====================================
@@ -173,16 +193,18 @@ photos.forEach(photo => {
 
         popup.innerHTML = `
 
-        <div class="popup-content">
+            <div class="popup-content">
 
-            <img src="${photo.src}">
+                <img src="${photo.src}" alt="Memory">
 
-        </div>
+            </div>
 
         `;
 
         document.body.appendChild(popup);
 
+
+        // Close popup when clicked
         popup.addEventListener("click", () => {
 
             popup.remove();
@@ -194,26 +216,25 @@ photos.forEach(photo => {
 });
 
 
-
 // =====================================
 // RANDOM CONFETTI
 // =====================================
 
-function randomConfetti(){
+function randomConfetti() {
 
     confetti({
 
-        particleCount:80,
+        particleCount: 80,
 
-        spread:80,
+        spread: 80,
 
-        startVelocity:40,
+        startVelocity: 40,
 
-        origin:{
+        origin: {
 
-            x:Math.random(),
+            x: Math.random(),
 
-            y:Math.random()-0.2
+            y: Math.random() - 0.2
 
         }
 
@@ -222,85 +243,49 @@ function randomConfetti(){
 }
 
 
-
 // =====================================
-// EXTRA CONFETTI
+// GRADUATION CURSOR EFFECT
 // =====================================
 
-gift.addEventListener("click",()=>{
 
-    setTimeout(randomConfetti,300);
+document.addEventListener("mousemove", (e) => {
 
-    setTimeout(randomConfetti,700);
+    const sparkle = document.createElement("div");
 
-    setTimeout(randomConfetti,1000);
+    sparkle.innerHTML = "✨";
+
+    sparkle.className = "cursorHeart";
+
+    sparkle.style.left = e.pageX + "px";
+
+    sparkle.style.top = e.pageY + "px";
+
+    document.body.appendChild(sparkle);
+
+
+    setTimeout(() => {
+
+        sparkle.remove();
+
+    }, 900);
 
 });
-
-
-
-// =====================================
-// HEART CURSOR
-// =====================================
-
-document.addEventListener("mousemove",(e)=>{
-
-    const heart=document.createElement("div");
-
-    heart.innerHTML="❤️";
-
-    heart.className="cursorHeart";
-
-    heart.style.left=e.pageX+"px";
-
-    heart.style.top=e.pageY+"px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },900);
-
-});
-
 
 
 // =====================================
 // PAGE FADE
 // =====================================
 
-document.querySelectorAll(".page").forEach(page=>{
+document.querySelectorAll(".page").forEach(page => {
 
     page.classList.add("fadeIn");
 
 });
 
 
-
-// =====================================
-// FINISH MESSAGE
-// =====================================
-
-finishBtn.addEventListener("click",()=>{
-
-    confetti({
-
-        particleCount:250,
-
-        spread:120,
-
-        origin:{y:0.7}
-
-    });
-
-});
-
-
-
 // =====================================
 // END
 // =====================================
 
-console.log("Gift Website Ready ❤️");
+console.log("Graduation Gift Website Ready 🎓");
+```
