@@ -3,32 +3,32 @@
    RESET
 =========================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
+body{
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    font-family:'Poppins',sans-serif;
 
-    background:
-        linear-gradient(
-            135deg,
-            #0f172a,
-            #172554,
-            #1e3a5f,
-            #0f172a
-        );
+    overflow-x:hidden;
+    overflow-y:auto;
 
-    min-height: 100vh;
+    background:linear-gradient(
+    135deg,
+    #DCEBFF,
+    #E5F0FF,
+    #F2F7FF,
+    #E8F0FF);
+
+    min-height:100vh;
+
 }
 
 
@@ -37,27 +37,31 @@ body {
    PAGE
 =========================== */
 
-.page {
+.page{
 
-    width: 100%;
-    min-height: 100vh;
+    width:100%;
 
-    display: flex;
+    min-height:100vh;
 
-    justify-content: center;
-    align-items: center;
+    display:flex;
 
-    position: absolute;
+    justify-content:center;
 
-    top: 0;
-    left: 0;
+    align-items:center;
 
-    transition: 1s;
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    transition:1s;
 
 }
 
-.hidden {
-    display: none;
+.hidden{
+
+    display:none;
+
 }
 
 
@@ -66,33 +70,35 @@ body {
    FLOATING BACKGROUND
 =========================== */
 
-.floating {
+.floating{
 
-    position: fixed;
+    position:fixed;
 
-    width: 100%;
-    height: 100%;
+    width:100%;
 
-    overflow: hidden;
+    height:100%;
 
-    z-index: -1;
+    overflow:hidden;
+
+    z-index:-1;
 
 }
 
-.floating span {
+.floating span{
 
-    position: absolute;
+    position:absolute;
 
-    display: block;
+    display:block;
 
-    width: 25px;
-    height: 25px;
+    width:25px;
 
-    border-radius: 50%;
+    height:25px;
 
-    background: rgba(255, 255, 255, .08);
+    border-radius:50%;
 
-    animation: floatBubble 18s linear infinite;
+    background:rgba(255,255,255,.45);
+
+    animation:floatBubble 18s linear infinite;
 
 }
 
@@ -100,91 +106,75 @@ body {
 
 /* Bubble Position */
 
-.floating span:nth-child(1) {
+.floating span:nth-child(1){
 
-    left: 10%;
-
-    width: 30px;
-    height: 30px;
-
-    animation-duration: 15s;
+    left:10%;
+    width:30px;
+    height:30px;
+    animation-duration:15s;
 
 }
 
-.floating span:nth-child(2) {
+.floating span:nth-child(2){
 
-    left: 25%;
-
-    width: 20px;
-    height: 20px;
-
-    animation-duration: 18s;
+    left:25%;
+    width:20px;
+    height:20px;
+    animation-duration:18s;
 
 }
 
-.floating span:nth-child(3) {
+.floating span:nth-child(3){
 
-    left: 40%;
-
-    width: 40px;
-    height: 40px;
-
-    animation-duration: 22s;
+    left:40%;
+    width:40px;
+    height:40px;
+    animation-duration:22s;
 
 }
 
-.floating span:nth-child(4) {
+.floating span:nth-child(4){
 
-    left: 58%;
-
-    width: 18px;
-    height: 18px;
-
-    animation-duration: 17s;
+    left:58%;
+    width:18px;
+    height:18px;
+    animation-duration:17s;
 
 }
 
-.floating span:nth-child(5) {
+.floating span:nth-child(5){
 
-    left: 72%;
-
-    width: 35px;
-    height: 35px;
-
-    animation-duration: 20s;
+    left:72%;
+    width:35px;
+    height:35px;
+    animation-duration:20s;
 
 }
 
-.floating span:nth-child(6) {
+.floating span:nth-child(6){
 
-    left: 82%;
-
-    width: 28px;
-    height: 28px;
-
-    animation-duration: 16s;
+    left:82%;
+    width:28px;
+    height:28px;
+    animation-duration:16s;
 
 }
 
-.floating span:nth-child(7) {
+.floating span:nth-child(7){
 
-    left: 90%;
-
-    width: 24px;
-    height: 24px;
-
-    animation-duration: 21s;
+    left:90%;
+    width:24px;
+    height:24px;
+    animation-duration:21s;
 
 }
 
-.floating span:nth-child(8) {
+.floating span:nth-child(8){
 
-    left: 50%;
-
-    width: 32px;
-    height: 32px;
-
-    animation-duration: 24s;
+    left:50%;
+    width:32px;
+    height:32px;
+    animation-duration:24s;
 
 }
 
@@ -194,27 +184,27 @@ body {
    FLOAT ANIMATION
 =========================== */
 
-@keyframes floatBubble {
+@keyframes floatBubble{
 
-    0% {
+    0%{
 
-        transform: translateY(110vh) scale(0);
+        transform:translateY(110vh) scale(0);
 
-        opacity: 0;
-
-    }
-
-    20% {
-
-        opacity: .4;
+        opacity:0;
 
     }
 
-    100% {
+    20%{
 
-        transform: translateY(-120vh) scale(1.4);
+        opacity:.5;
 
-        opacity: 0;
+    }
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.4);
+
+        opacity:0;
 
     }
 
@@ -226,37 +216,25 @@ body {
    GLASS CARD
 =========================== */
 
-.card {
+.card{
 
-    width: 700px;
+    width:700px;
 
-    max-width: 90%;
+    max-width:90%;
 
-    padding: 60px;
+    padding:60px;
 
-    border-radius: 30px;
+    border-radius:30px;
 
-    background: rgba(255, 255, 255, .08);
+    background:rgba(255,255,255,.35);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:blur(18px);
 
-    border: 1px solid rgba(255, 255, 255, .15);
+    border:1px solid rgba(255,255,255,.5);
 
-    text-align: center;
+    text-align:center;
 
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, .35);
-
-    transition: .4s;
-
-}
-
-.card:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 30px 60px rgba(0, 0, 0, .45);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
 
 }
 
@@ -266,44 +244,39 @@ body {
    TEXT
 =========================== */
 
-.smallText {
+.smallText{
 
-    color: #f5c76b;
+    color:#2563eb;
 
-    font-weight: 600;
+    font-weight:600;
 
-    letter-spacing: 2px;
+    letter-spacing:2px;
 
-    margin-bottom: 15px;
-
-    text-transform: uppercase;
+    margin-bottom:15px;
 
 }
 
-.name {
+.name{
 
-    font-family: 'Great Vibes', cursive;
+    font-family:'Blackadder ITC',cursive;
 
-    font-size: 65px;
+    font-size:50px;
 
-    color: #ffffff;
+    color:#1d4ed8;
 
-    margin-bottom: 20px;
-
-    text-shadow:
-        0 5px 20px rgba(0, 0, 0, .3);
+    margin-bottom:20px;
 
 }
 
-.description {
+.description{
 
-    color: #dbeafe;
+    color:#2563eb;
 
-    line-height: 1.9;
+    line-height:1.9;
 
-    font-size: 18px;
+    font-size:18px;
 
-    margin-bottom: 45px;
+    margin-bottom:45px;
 
 }
 
@@ -313,74 +286,38 @@ body {
    BUTTON
 =========================== */
 
-button {
+button{
 
-    border: none;
+    border:none;
 
-    padding: 18px 40px;
+    padding:18px 40px;
 
-    border-radius: 60px;
+    border-radius:60px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #3b82f6
-        );
+    background:linear-gradient(
+    90deg,
+    #2563eb,
+    #60a5fa);
 
-    color: white;
+    color:white;
 
-    font-size: 17px;
+    font-size:17px;
 
-    font-weight: 600;
+    font-weight:600;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    transition: .35s;
+    transition:.35s;
 
-    box-shadow:
-        0 15px 30px rgba(37, 99, 235, .30);
-
-    position: relative;
-
-    overflow: hidden;
+    box-shadow:0 15px 30px rgba(37,99,235,.30);
 
 }
 
-button:hover {
+button:hover{
 
-    transform: translateY(-5px);
+    transform:translateY(-5px);
 
-    box-shadow:
-        0 22px 40px rgba(37, 99, 235, .45);
-
-}
-
-button::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -120%;
-
-    width: 80%;
-
-    height: 100%;
-
-    background: rgba(255, 255, 255, .25);
-
-    transform: skewX(-30deg);
-
-    transition: .7s;
-
-}
-
-button:hover::before {
-
-    left: 130%;
+    box-shadow:0 22px 40px rgba(37,99,235,.45);
 
 }
 
@@ -390,62 +327,61 @@ button:hover::before {
                 GIFT PAGE
 =================================================== */
 
-.giftContainer {
+.giftContainer{
 
-    text-align: center;
-
-}
-
-.gift {
-
-    width: 220px;
-
-    margin: auto;
-
-    cursor: pointer;
-
-    transition: .4s;
-
-    animation: giftFloat 2.5s ease-in-out infinite;
+    text-align:center;
 
 }
 
-.gift img {
+.gift{
 
-    width: 100%;
+    width:220px;
 
-    user-select: none;
+    margin:auto;
 
-    pointer-events: none;
+    cursor:pointer;
 
-    filter:
-        drop-shadow(0 20px 25px rgba(0, 0, 0, .35));
+    transition:.4s;
 
-}
-
-.gift:hover {
-
-    transform: scale(1.08);
+    animation:giftFloat 2.5s ease-in-out infinite;
 
 }
 
-.giftContainer h2 {
+.gift img{
 
-    margin-top: 35px;
+    width:100%;
 
-    font-size: 32px;
+    user-select:none;
 
-    color: #ffffff;
+    pointer-events:none;
+
+    filter:drop-shadow(0 20px 25px rgba(0,0,0,.18));
 
 }
 
-.giftContainer p {
+.gift:hover{
 
-    margin-top: 10px;
+    transform:scale(1.08);
 
-    color: #cbd5e1;
+}
 
-    font-size: 17px;
+.giftContainer h2{
+
+    margin-top:35px;
+
+    font-size:32px;
+
+    color:#2563eb;
+
+}
+
+.giftContainer p{
+
+    margin-top:10px;
+
+    color:#666;
+
+    font-size:17px;
 
 }
 
@@ -455,35 +391,35 @@ button:hover::before {
                 CONGRATULATION PAGE
 =================================================== */
 
-.congrats h3 {
+.congrats h3{
 
-    font-size: 30px;
+    font-size:30px;
 
-    color: #f5c76b;
+    color:#2563eb;
 
-    margin-bottom: 20px;
-
-}
-
-.congrats h1 {
-
-    font-size: 58px;
-
-    color: #ffffff;
-
-    margin-bottom: 25px;
+    margin-bottom:20px;
 
 }
 
-.congrats p {
+.congrats h1{
 
-    line-height: 2;
+    font-size:58px;
 
-    color: #dbeafe;
+    color:#333;
 
-    font-size: 18px;
+    margin-bottom:25px;
 
-    margin-bottom: 40px;
+}
+
+.congrats p{
+
+    line-height:2;
+
+    color:#555;
+
+    font-size:18px;
+
+    margin-bottom:40px;
 
 }
 
@@ -493,122 +429,87 @@ button:hover::before {
                 GALLERY
 =================================================== */
 
-.galleryCard {
+.galleryCard{
 
-    width: 1100px;
+    width:1100px;
 
-    max-width: 92%;
+    max-width:92%;
 
-    text-align: center;
-
-    animation: fadeIn .8s;
+    text-align:center;
 
 }
 
-.galleryCard h2 {
+.galleryCard h2{
 
-    color: #f5c76b;
+    color:#2563eb;
 
-    font-size: 45px;
+    font-size:45px;
 
-    margin-bottom: 10px;
-
-}
-
-.gallerySubtitle {
-
-    color: #cbd5e1;
-
-    margin-bottom: 40px;
+    margin-bottom:10px;
 
 }
 
-.gallery {
+.gallerySubtitle{
 
-    display: grid;
+    color:#777;
 
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
+    margin-bottom:40px;
 
 }
 
-.photo {
+.gallery{
 
-    position: relative;
+    display:grid;
 
-    overflow: hidden;
+    grid-template-columns:repeat(3,1fr);
 
-    border-radius: 22px;
-
-    background: #ffffff;
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, .35);
-
-    transition: .35s;
+    gap:25px;
 
 }
 
-.photo img {
+.photo{
 
-    width: 100%;
+    overflow:hidden;
 
-    display: block;
+    border-radius:22px;
 
-    aspect-ratio: 1 / 1;
+    background:white;
 
-    object-fit: cover;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
 
-    transition: .35s;
-
-    cursor: pointer;
+    transition:.35s;
 
 }
 
-.photo:hover {
+.photo img{
 
-    transform: translateY(-10px);
+    width:100%;
 
-}
+    display:block;
 
-.photo:hover img {
+    aspect-ratio:1/1;
 
-    transform: scale(1.08);
+    object-fit:cover;
 
-}
-
-.photo::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            transparent 60%,
-            rgba(0, 0, 0, .3)
-        );
-
-    opacity: 0;
-
-    transition: .35s;
-
-    pointer-events: none;
+    transition:.35s;
 
 }
 
-.photo:hover::after {
+.photo:hover{
 
-    opacity: 1;
+    transform:translateY(-10px);
 
 }
 
-.galleryCard button {
+.photo:hover img{
 
-    margin-top: 45px;
+    transform:scale(1.08);
+
+}
+
+.galleryCard button{
+
+    margin-top:45px;
 
 }
 
@@ -618,53 +519,47 @@ button:hover::before {
                 ENDING
 =================================================== */
 
-.ending {
+.ending{
 
-    max-width: 700px;
-
-}
-
-.heart {
-
-    font-size: 70px;
-
-    animation: graduationFloat 1.8s ease-in-out infinite;
-
-    filter:
-        drop-shadow(
-            0 0 18px
-            rgba(245, 199, 107, .35)
-        );
+    max-width:700px;
 
 }
 
-.ending h1 {
+.heart{
 
-    margin-top: 15px;
+    font-size:70px;
 
-    color: #f5c76b;
-
-    font-size: 60px;
+    animation:heartbeat 1.2s infinite;
 
 }
 
-.ending p {
+.ending h1{
 
-    margin-top: 25px;
+    margin-top:15px;
 
-    line-height: 2;
+    color:#2563eb;
 
-    color: #dbeafe;
-
-    margin-bottom: 35px;
+    font-size:60px;
 
 }
 
-.ending h3 {
+.ending p{
 
-    color: #94a3b8;
+    margin-top:25px;
 
-    font-weight: 500;
+    line-height:2;
+
+    color:#555;
+
+    margin-bottom:35px;
+
+}
+
+.ending h3{
+
+    color:#888;
+
+    font-weight:500;
 
 }
 
@@ -674,45 +569,45 @@ button:hover::before {
                 ANIMATION
 =================================================== */
 
-@keyframes giftFloat {
+@keyframes giftFloat{
 
-    0% {
+    0%{
 
-        transform: translateY(0px);
-
-    }
-
-    50% {
-
-        transform: translateY(-18px);
+        transform:translateY(0px);
 
     }
 
-    100% {
+    50%{
 
-        transform: translateY(0px);
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
 
     }
 
 }
 
-@keyframes graduationFloat {
+@keyframes heartbeat{
 
-    0% {
+    0%{
 
-        transform: translateY(0px);
-
-    }
-
-    50% {
-
-        transform: translateY(-8px);
+        transform:scale(1);
 
     }
 
-    100% {
+    50%{
 
-        transform: translateY(0px);
+        transform:scale(1.18);
+
+    }
+
+    100%{
+
+        transform:scale(1);
 
     }
 
@@ -724,59 +619,111 @@ button:hover::before {
                 RESPONSIVE
 =================================================== */
 
-@media(max-width: 900px) {
+@media(max-width:900px){
 
-    .gallery {
+.gallery{
 
-        grid-template-columns: repeat(2, 1fr);
+grid-template-columns:repeat(2,1fr);
 
-    }
+}
 
-    .name {
+.name{
 
-        font-size: 58px;
+font-size:58px;
 
-    }
+}
 
-    .card {
+.card{
 
-        padding: 45px;
+padding:45px;
 
-    }
+}
 
 }
 
 
 
-@media(max-width: 600px) {
+@media(max-width:600px){
 
-    .gallery {
+.gallery{
 
-        grid-template-columns: 1fr;
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+padding:35px 25px;
+
+}
+
+.name{
+
+font-size:48px;
+
+}
+
+.description{
+
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+
+
+
+/* ===================================================
+                    PAGE TRANSITION
+=================================================== */
+
+.fadeIn{
+
+    animation:fadeIn .8s ease;
+
+}
+
+.fadeOut{
+
+    animation:fadeOut .6s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
 
     }
 
-    .card {
+    to{
 
-        padding: 35px 25px;
-
-    }
-
-    .name {
-
-        font-size: 48px;
+        opacity:1;
+        transform:translateY(0);
 
     }
 
-    .description {
+}
 
-        font-size: 16px;
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
 
     }
 
-    button {
+    to{
 
-        width: 100%;
+        opacity:0;
 
     }
 
@@ -785,54 +732,82 @@ button:hover::before {
 
 
 /* ===================================================
-                PAGE TRANSITION
+                BUTTON EFFECT
 =================================================== */
 
-.fadeIn {
+button{
 
-    animation: fadeIn .8s ease;
+    position:relative;
 
-}
-
-.fadeOut {
-
-    animation: fadeOut .6s ease;
+    overflow:hidden;
 
 }
 
-@keyframes fadeIn {
+button::before{
 
-    from {
+    content:"";
 
-        opacity: 0;
+    position:absolute;
 
-        transform: translateY(20px);
+    top:0;
 
-    }
+    left:-120%;
 
-    to {
+    width:80%;
 
-        opacity: 1;
+    height:100%;
 
-        transform: translateY(0);
+    background:rgba(255,255,255,.35);
 
-    }
+    transform:skewX(-30deg);
+
+    transition:.7s;
 
 }
 
-@keyframes fadeOut {
+button:hover::before{
 
-    from {
+    left:130%;
 
-        opacity: 1;
+}
 
-    }
 
-    to {
 
-        opacity: 0;
+/* ===================================================
+                PHOTO EFFECT
+=================================================== */
 
-    }
+.photo{
+
+    position:relative;
+
+}
+
+.photo::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        transparent 60%,
+
+        rgba(0,0,0,.25)
+
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.photo:hover::after{
+
+    opacity:1;
 
 }
 
@@ -842,29 +817,29 @@ button:hover::before {
                 CUSTOM SCROLLBAR
 =================================================== */
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
 
-    width: 10px;
-
-}
-
-::-webkit-scrollbar-track {
-
-    background: #0f172a;
+    width:10px;
 
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-track{
 
-    background: #2563eb;
-
-    border-radius: 50px;
+    background:#e0edff;
 
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb{
 
-    background: #3b82f6;
+    background:#60a5fa;
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2563eb;
 
 }
 
@@ -874,11 +849,11 @@ button:hover::before {
                 SELECTION
 =================================================== */
 
-::selection {
+::selection{
 
-    background: #2563eb;
+    background:#60a5fa;
 
-    color: white;
+    color:white;
 
 }
 
@@ -888,117 +863,153 @@ button:hover::before {
                 IMAGE POPUP
 =================================================== */
 
-.popup {
+.photo img{
 
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, .85);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    z-index: 10000;
-
-    padding: 30px;
-
-}
-
-.popup-content {
-
-    max-width: 900px;
-
-    max-height: 90vh;
-
-}
-
-.popup-content img {
-
-    max-width: 100%;
-
-    max-height: 90vh;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, .5);
+    cursor:pointer;
 
 }
 
 
 
 /* ===================================================
-                GRADUATION CURSOR
+                GLASS HOVER
 =================================================== */
 
-.cursorHeart {
+.card{
 
-    position: absolute;
-
-    pointer-events: none;
-
-    font-size: 18px;
-
-    animation: sparkleFly .9s linear forwards;
-
-    z-index: 9999;
+    transition:.4s;
 
 }
 
-@keyframes sparkleFly {
+.card:hover{
 
-    0% {
+    transform:translateY(-8px);
 
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.6);
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform:
-            translate(-50%, -130px)
-            scale(1.4);
-
-    }
+    box-shadow:0 30px 60px rgba(0,0,0,.15);
 
 }
 
 
 
 /* ===================================================
-                GALLERY MOBILE FIX
+                SOFT SHADOW
 =================================================== */
 
-#galleryPage {
+.galleryCard{
 
-    overflow-y: auto;
-
-    padding: 40px 0;
+    animation:fadeIn .8s;
 
 }
 
 
 
 /* ===================================================
-                GLOBAL TRANSITION
+                ENDING HEART
 =================================================== */
 
-* {
+.heart{
+
+    filter:drop-shadow(
+        0 0 18px
+        rgba(37,99,235,.35)
+    );
+
+}
+
+
+
+/* ===================================================
+                PRETTY TITLE
+=================================================== */
+
+.galleryCard h2,
+.congrats h3,
+.smallText{
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+
+
+/* ===================================================
+                IMAGE LOADING
+=================================================== */
+
+img{
+
+    -webkit-user-drag:none;
+
+}
+
+
+
+/* ===================================================
+                NICE TRANSITION
+=================================================== */
+
+*{
 
     transition:
-        background .3s,
-        color .3s,
-        box-shadow .3s;
+    background .3s,
+    color .3s,
+    box-shadow .3s;
+
+}
+
+
+
+/* ==============================
+      HEART CURSOR
+================================ */
+
+.cursorHeart{
+
+position:absolute;
+
+pointer-events:none;
+
+font-size:18px;
+
+animation:heartFly .9s linear forwards;
+
+z-index:9999;
+
+}
+
+@keyframes heartFly{
+
+0%{
+
+opacity:1;
+
+transform:translate(-50%,-50%) scale(.6);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translate(-50%,-130px) scale(1.6);
+
+}
+
+}
+
+
+
+/* ==============================
+      GALLERY MOBILE FIX
+================================ */
+
+#galleryPage{
+
+    overflow-y:auto;
+
+    padding:40px 0;
 
 }
 
