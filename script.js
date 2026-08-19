@@ -288,4 +288,4 @@ document.querySelectorAll(".page").forEach(page => {
 // =====================================
 
 console.log("Graduation Gift Website Ready 🎓");
-```
+
